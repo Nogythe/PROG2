@@ -7,8 +7,16 @@ app = Flask("Zutatenapp")
 def home():
 	return render_template('index.html')
 
-@app.route('/franz')
-def franz():
+@app.route('/Franz')
+def Franz():
+	return render_template('franz.html')
+
+@app.route('/Italy')
+def Italy():
+	return render_template('franz.html')
+
+@app.route('/Turkey')
+def Turkey():
 	return render_template('franz.html')
 
 if __name__ == "_main_":
