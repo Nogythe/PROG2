@@ -1,6 +1,6 @@
 # Rezept Ratgeber
 
-Dieses Tool gibt dir anhand deiner vorhandenen Zutaten ein Rezept aus. Aus begrenzten Zutaten in deinem Haushalt wird dir ein feines Rezept erstellt.
+Dieses Programm gibt dir anhand deiner vorhandenen Zutaten ein Rezept aus. Falls du eine Zutat nicht vorhanden hast wird diese ausgegeben.
 
 ## Ausgangslage
 
