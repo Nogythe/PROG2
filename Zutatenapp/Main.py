@@ -23,6 +23,10 @@ def italy():
 def turkey():
     return render_template('turkey.html')
 
+@app.route('/add_rezept')
+def add_rezept():
+    return render_template('add_rezept.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
