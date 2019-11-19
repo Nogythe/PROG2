@@ -67,26 +67,36 @@ def add_turkey():
 
 
 
-
-
-
-
-@app.route('/summary_franz')
+@app.route('/summary_franz', methods=['GET', 'POST'])
 def summary_franz():
+    if request.method == 'POST':
+        rezept_titel = request.form['rezept_titel']
+        rezepte['franz'].pop(rezept_titel, None)
+        data.save_json(data_storage_file, rezepte)
 
     return render_template('summary_franz.html', rezepte=rezepte['franz'])
 
 
-@app.route('/summary_italy')
+@app.route('/summary_italy', methods=['GET', 'POST'])
 def summary_italy():
+    if request.method == 'POST':
+        rezept_titel = request.form['rezept_titel']
+        rezepte['italy'].pop(rezept_titel, None)
+        data.save_json(data_storage_file, rezepte)
+
     if 'italy' in rezepte:
         return render_template('summary_italy.html', rezepte=rezepte['italy'])
     else: 
         return render_template('summary_italy.html', rezepte=None)
 
 
-@app.route('/summary_turkey')
+@app.route('/summary_turkey', methods=['GET', 'POST'])
 def summary_turkey():
+    if request.method == 'POST':
+        rezept_titel = request.form['rezept_titel']
+        rezepte['turkey'].pop(rezept_titel, None)
+        data.save_json(data_storage_file, rezepte)
+
     return render_template('summary_turkey.html', rezepte=rezepte['turkey'])
 
 

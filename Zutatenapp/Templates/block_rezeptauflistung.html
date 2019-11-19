@@ -6,6 +6,10 @@
 				<div class="card-body">
 					<h5 class="card-title">{{ key }}</h5>
 					<p class="card-text">{{ value }}</p>
+					<form method="post">
+						<input type="hidden" name="rezept_titel" value="{{ key }}">
+				        <button type="submit" class="btn btn-danger">Löschen</button>
+				      </form>
 				</div>
 			</div>
 		</div>
