@@ -9,23 +9,37 @@ def home():
     return render_template("index.html")
 
 
-@app.route('/franz')
-def franz():
-    return render_template('franz.html')
+@app.route('/add_franz')
+def add_franz():
+    return render_template('add_franz.html')
 
 
-@app.route('/italy')
-def italy():
-    return render_template('italy.html')
+@app.route('/add_italy')
+def add_italy():
+    return render_template('add_italy.html')
 
 
-@app.route('/turkey')
-def turkey():
-    return render_template('turkey.html')
+@app.route('/add_turkey')
+def add_turkey():
+    return render_template('add_turkey.html')
 
-@app.route('/add_rezept')
-def add_rezept():
-    return render_template('add_rezept.html')
+@app.route('/summary_franz')
+def summary_franz():
+    return render_template('summary_franz.html')
+
+
+@app.route('/summary_italy')
+def summary_italy():
+    return render_template('summary_italy.html')
+
+
+@app.route('/summary_turkey')
+def summary_turkey():
+    return render_template('summary_turkey.html')
+
+@app.route('/add_richtung')
+def add_richtung():
+    return render_template('add_richtung.html')
 
 
 if __name__ == '__main__':

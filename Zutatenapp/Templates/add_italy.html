@@ -1,0 +1,25 @@
+{% include "html_head.html" %}
+  <body>
+    {% include "nav_block.html" %}
+    <br />
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col col-6">
+      <form>
+        <div class="form-group">
+          <label for="rezept_titel">Rezept Titel</label>
+          <input type="text" class="form-control" id="rezept_titel" placeholder="Titel">
+        </div>
+        <div class="form-group">
+          <label for="rezept_beschreibung">Rezept</label>
+          <textarea class="form-control" id="rezept_beschreibung" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Speichern</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+    
+  </body>
+</html>
