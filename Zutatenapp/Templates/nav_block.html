@@ -1,14 +1,12 @@
- <a href="{{ url_for('home')}}">
- <h1>Zutatenapp</h1>
-</a>
-    <div class="card">
-  <h5 class="card-header">Erfasse ein Gericht</h5>
-  <div class="card-body">
-    <h5 class="card-title">Verliere nie mehr ein Gericht</h5>
-    <p class="card-text"></p>
-    <a href="{{ url_for('add_italy')}}" class="btn btn-primary">Italienisches Gericht</a>
-    <a href="{{ url_for('add_franz')}}" class="btn btn-primary">Französisches Gericht</a>
-    <a href="{{ url_for('add_turkey')}}" class="btn btn-primary">Türkisches Gericht</a>
-    <a href="{{ url_for('add_richtung')}}" class="btn btn-primary">Neue Richtung erfassen</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{{ url_for('home')}}">Zutatenapp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link {% if request.path == '/' or request.path == '/summary_italy' or request.path == '/summary_franz' or request.path == '/summary_turkey' %}active{% endif %}" href="{{ url_for('home')}}">Gesammelte Gerichte</a>
+      <a class="nav-item nav-link {% if request.path == '/add_gericht' or request.path == '/add_italy' or request.path == '/add_franz' or request.path == '/add_turkey' %}active{% endif %}" href="{{ url_for('add_gericht')}}">Gericht hinzufügen</a>
+    </div>
   </div>
-</div>
+</nav>

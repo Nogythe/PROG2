@@ -1,6 +1,8 @@
 {% include "html_head.html" %}
   <body>
     {% include "nav_block.html" %}
+    <br/>
+    <h5>Italienisches Gericht hinzufügen:</h5>
     <br />
 <div class="container">
   <div class="row justify-content-md-center">
@@ -8,13 +10,14 @@
       <form method="post">
         <div class="form-group">
           <label for="rezept_titel">Rezept Titel</label>
-          <input type="text" class="form-control" id="rezept_titel" name="rezept_titel" placeholder="Titel">
+          <input type="text" class="form-control" id="rezept_titel" name="rezept_titel" placeholder="Titel" required>
         </div>
         <div class="form-group">
           <label for="rezept_beschreibung">Rezept</label>
-          <textarea class="form-control" id="rezept_beschreibung" name="rezept_beschreibung" rows="3"></textarea>
+          <textarea class="form-control" id="rezept_beschreibung" name="rezept_beschreibung" rows="3" required=""></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Speichern</button>
+        <a href="{{ url_for('add_gericht')}}" class="btn btn-primary">Abbrechen</a>
       </form>
     </div>
   </div>

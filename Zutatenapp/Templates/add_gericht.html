@@ -1,0 +1,12 @@
+{% include "html_head.html" %}
+{% include "nav_block.html" %}
+  <body>
+  	<div class="card">
+  <h5 class="card-header">Erfasse ein Gericht:</h5>
+  <div class="card-body">
+    <p class="card-text"></p>
+    <a href="{{ url_for('add_italy')}}" class="btn btn-success">Italienisches Gericht</a>
+    <a href="{{ url_for('add_franz')}}" class="btn btn-primary">Französisches Gericht</a>
+    <a href="{{ url_for('add_turkey')}}" class="btn btn-info">Türkisches Gericht</a>
+  </div>
+</div>
