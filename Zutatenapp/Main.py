@@ -1,8 +1,10 @@
 from flask import Flask
 from flask import render_template
+from libs import data
 
 app = Flask("Zutatenapp")
-
+rezepte = {}
+rezepte = data.create_dummy_data()
 
 @app.route("/")
 def home():
@@ -25,17 +27,17 @@ def add_turkey():
 
 @app.route('/summary_franz')
 def summary_franz():
-    return render_template('summary_franz.html')
+    return render_template('summary_franz.html', rezepte=rezepte['franz'])
 
 
 @app.route('/summary_italy')
 def summary_italy():
-    return render_template('summary_italy.html')
+    return render_template('summary_italy.html', rezepte=rezepte['italy'])
 
 
 @app.route('/summary_turkey')
 def summary_turkey():
-    return render_template('summary_turkey.html')
+    return render_template('summary_turkey.html', rezepte=rezepte['turkey'])
 
 @app.route('/add_richtung')
 def add_richtung():
