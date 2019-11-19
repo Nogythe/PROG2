@@ -1,6 +1,9 @@
 from flask import Flask
 from flask import render_template
 from libs import data
+from flask import request
+from flask import redirect
+from flask import url_for
 
 app = Flask("Zutatenapp")
 rezepte = {}
@@ -16,14 +19,20 @@ def add_franz():
     return render_template('add_franz.html')
 
 
-@app.route('/add_italy')
+@app.route('/add_italy', methods=['GET', 'POST'])
 def add_italy():
+    if request.method == 'POST':
+        rezept_titel = request.form['rezept_titel']
+        rezept_beschreibung = request.form['rezept_beschreibung']
+        rezepte[rezept_titel] = rezept_beschreibung
+        return redirect(url_for('summary_italy'))
+
     return render_template('add_italy.html')
 
 
 @app.route('/add_turkey')
 def add_turkey():
-    return render_template('add_turkey.html')
+    return render_template('add_turkey.html', methods=['GET', 'POST'])
 
 @app.route('/summary_franz')
 def summary_franz():
