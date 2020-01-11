@@ -2,53 +2,58 @@
   <body>
     {% include "nav_block.html" %}
 
+    <div class="card">
+      <h5 class="card-header">Deine Rezepte Übersicht:</h5>
+      <div class="card-body">
+        <p class="card-text"></p>
+        <a href="{{ url_for('summary_italy')}}" class="btn btn-success">Italienische Gerichte</a>
+        <a href="{{ url_for('summary_franz')}}" class="btn btn-primary">Französische Gerichte</a>
+        <a href="{{ url_for('summary_turkey')}}" class="btn btn-info">Türkische Gerichte</a>
+      </div>
+    </div>
 
     <div class="card">
-  <h5 class="card-header">Deine Rezepte Übersicht:</h5>
-  <div class="card-body">
-    <p class="card-text"></p>
-    <a href="{{ url_for('summary_italy')}}" class="btn btn-success">Italienische Gerichte</a>
-    <a href="{{ url_for('summary_franz')}}" class="btn btn-primary">Französische Gerichte</a>
-    <a href="{{ url_for('summary_turkey')}}" class="btn btn-info">Türkische Gerichte</a>
-  </div>
-</div>
-
-
-<!--<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <div class="card" style="width: 15rem;">
-	  	<img src="Turkey_Main.jpg" class="card-img-top" alt="Turkey">
-	  	<div class="card-body">
-	    	<h5 class="card-title">Türkisch</h5>
-	    	<p class="card-text">All deine Türkischen Rezepte</p>
-	    	<a href="{{ url_for('summary_turkey')}}" class="btn btn-primary">Finde dein Rezept</a>
-	  	</div>
-	  </div>
+      <h5 class="card-header">Statistische Auswertung</h5>
+      <div class="card-body">
+        <div class="row border-bottom">
+          <div class="col-3 border-right">
+            
+          </div>
+          <div class="col-3">
+            <h6>Rezept-Kategorie</h6>
+          </div>
+          <div class="col-3">
+            <h6>Anzahl Rezepte</h6>
+          </div>
+          <div class="col-3">
+            <h6>Prozentanteil</h6>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2 pt-2">
+            <h6>Total Rezepte:</h6>
+          </div>
+          <div class="col-1 pt-2 border-right">
+            <h6>{{ count_total }}</h6>
+          </div>
+          <div class="col-3 pt-2">
+            Italienisch<br />
+            Französisch<br />
+            Türkisch<br />
+          </div>
+          <div class="col-3 pt-2">
+            {{ count_italy }}<br />
+            {{ count_franz }}<br />
+            {{ count_turkey }}
+          </div>
+          <div class="col-3 pt-2">
+            {{ percent_italy }} %<br />
+            {{ percent_franz }} %<br />
+            {{ percent_turkey }} %
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-sm">
-      <div class="card" style="width: 15rem;">
-	  	<img src="Französisch_Main.jpg" class="card-img-top" alt="Französisch">
-	  	<div class="card-body">
-	    	<h5 class="card-title">Französisch</h5>
-	    	<p class="card-text">All deine Französischen Rezepte</p>
-	    	<a href="{{ url_for('summary_franz')}}" class="btn btn-primary">Finde dein Rezept</a>
-	  	</div>
-	  </div>
-    </div>
-    <div class="col-sm">
-      <div class="card" style="width: 15rem;">
-	  	<img src="Italienisch_Main.jpg" class="card-img-top" alt="Italienisch">
-	  	<div class="card-body">
-	    	<h5 class="card-title">Italienisch</h5>
-	    	<p class="card-text">All deine Italienischen Rezepte</p>
-	    	<a href="{{ url_for('summary_italy')}}" class="btn btn-primary">Finde dein Rezept</a>
-	  	</div>
-	  </div>
-    </div>
-  </div>
-</div>-->
 
-    
   </body>
 </html>

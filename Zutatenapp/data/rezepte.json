@@ -1,3 +1,9 @@
 {
-    "italy": {}
+    "italy": {
+        "Spaghetti": "Spaghetti kochen und essen"
+    },
+    "franz": {
+        "Frosch": "Fr\u00f6sche fangen und essen"
+    },
+    "turkey": {}
 }
